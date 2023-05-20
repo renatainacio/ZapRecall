@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import FlashcardPage from './components/FlashcardPage'
 
 function App() {
   return (
     <>
-      <h1>Ola</h1>
+      <FlashcardPage/>
     </>
   )
 }

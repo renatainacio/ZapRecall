@@ -1,0 +1,93 @@
+<mxfile host="65bd71144e">
+    <diagram id="RpWwZEYifd1P-7ikTRA-" name="Page-1">
+        <mxGraphModel dx="770" dy="308" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="14" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="FlashCard Page" style="whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="152" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Header" style="whiteSpace=wrap;html=1;fillColor=#60a917;rounded=0;glass=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#2D7600;fontColor=#ffffff;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="242" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Footer" style="whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="242" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="24" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="28" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="edgeStyle=none;html=1;fontColor=#FFFFFF;" parent="1" source="18" target="32" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Flashcards" style="whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;glass=0;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="242" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Text" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;glass=0;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="392" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Buttons" style="whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;glass=0;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="392" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 20px;&quot;&gt;Question #&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;glass=0;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="382" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="whiteSpace=wrap;html=1;rounded=0;glass=0;sketch=1;fontColor=#FFFFFF;gradientColor=none;fillStyle=dashed;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="352" width="350" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="whiteSpace=wrap;html=1;rounded=0;glass=0;sketch=1;fontColor=#FFFFFF;gradientColor=none;fillStyle=dashed;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="425" y="352" width="350" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 20px;&quot;&gt;Icon&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;glass=0;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="382" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=none;html=1;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=16;fontColor=#FFFFFF;" parent="1" source="36" target="34" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="flashcard closed" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;fillStyle=cross-hatch;fontColor=#FFFFFF;fontFamily=Leckerli One;sketch=1;curveFitting=1;jiggle=2;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="462" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="flashcard opened" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;fillStyle=cross-hatch;fontColor=#FFFFFF;fontFamily=Leckerli One;sketch=1;curveFitting=1;jiggle=2;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="525" y="462" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="39" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="App" style="whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;sketch=1;curveFitting=1;jiggle=2;fontFamily=Leckerli One;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DLeckerli%2BOne;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="51" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
