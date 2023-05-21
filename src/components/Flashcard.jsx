@@ -12,23 +12,23 @@ export default function Flashcard(props) {
     const {question, answer} = props.card;
     let isOpened = openCards.includes(index);
     let isAnswered = answered.includes(index);
-    let isFlipped = flipped.includes(index);
+    let isFlipped = flipped.includes(index); 
     let isRecalled = recalled.includes(index);
     let isAlmostRecalled = almostRecalled.includes(index);
     let isNotRecalled = notRecalled.includes(index);
     return (
-        <SCQuestionContainer>
+        <SCQuestionContainer data-test="flashcard">
             <SCQuestionHeader $isOpened={isOpened} $isFlipped={isFlipped} $isRecalled={isRecalled} $isAnswered={isAnswered} $isAlmostRecalled={isAlmostRecalled} $isNotRecalled={isNotRecalled}>
-                <p>Pergunta {index + 1}</p>
-                <button disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={isRecalled ? ok : isAlmostRecalled ? almost : isNotRecalled ? notOk : play}/></button>
+                <p data-test="flashcard-text">Pergunta {index + 1}</p>
+                <button data-test={isRecalled ? "zap-icon" : isAlmostRecalled ? "partial-icon" : isNotRecalled ? "no-icon" : "play-btn"} disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={isRecalled ? ok : isAlmostRecalled ? almost : isNotRecalled ? notOk : play}/></button>
             </SCQuestionHeader>
             <SCQuestion $isOpened={isOpened} $isFlipped={isFlipped}>
-                {isOpened ? <p>{question}</p> : isFlipped ? <p>{answer}</p> : ""}
-                <img src={flip} onClick={flipCard}/>
+                {isOpened ? <p data-test="flashcard-text">{question}</p> : isFlipped ? <p data-test="flashcard-text">{answer}</p> : ""}
+                <img src={flip} onClick={flipCard} data-test="turn-btn"/>
                 <SCButtons $isFlipped={isFlipped}>
-                    <SCButton $color="red" disabled={!isFlipped} onClick={() => answerQuestion("notRecalled")}>Não lembrei</SCButton>
-                    <SCButton $color="yellow" disabled={!isFlipped} onClick={() => answerQuestion("almostRecalled")}>Quase não lembrei</SCButton>
-                    <SCButton disabled={!isFlipped} onClick={() => answerQuestion("recalled")}>Zap!</SCButton>
+                    <SCButton $color="red" disabled={!isFlipped} onClick={() => answerQuestion("notRecalled")} data-test="no-btn">Não lembrei</SCButton>
+                    <SCButton $color="yellow" disabled={!isFlipped} onClick={() => answerQuestion("almostRecalled")} data-test="partial-btn">Quase não lembrei</SCButton>
+                    <SCButton disabled={!isFlipped} onClick={() => answerQuestion("recalled")} data-test="zap-btn">Zap!</SCButton>
                 </SCButtons>
             </SCQuestion>
         </SCQuestionContainer>
@@ -100,10 +100,12 @@ const SCQuestion = styled.div`
     background: #FFFFD5;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    padding: 18px 15px;
+    padding: 10px 15px;
     position: relative;
     display: ${props => (!props.$isOpened && !props.$isFlipped) ? "none" : "flex"};
     p {
+        height: 53px
+        padding: 5px 0px;
         font-family: 'Recursive';
         font-style: normal;
         font-weight: 400;

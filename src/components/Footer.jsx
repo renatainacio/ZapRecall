@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Footer(props) {
     const {answered, cards} = props;
     return(
-        <SCFooter>
+        <SCFooter data-test="footer">
             <p>{answered.length}/{cards.length} CONCLUÍDOS</p>
         </SCFooter>
     )
