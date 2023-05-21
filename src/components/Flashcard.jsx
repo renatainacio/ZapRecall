@@ -1,4 +1,7 @@
 import play from '../assets/seta_play.png';
+import ok from '../assets/icone_certo.png';
+import almost from '../assets/icone_quase.png';
+import notOk from '../assets/icone_erro.png';
 import flip from '../assets/seta_virar.png';
 import styled from 'styled-components';
 
@@ -10,11 +13,14 @@ export default function Flashcard(props) {
     let isOpened = openCards.includes(index);
     let isAnswered = answered.includes(index);
     let isFlipped = flipped.includes(index);
+    let isRecalled = recalled.includes(index);
+    let isAlmostRecalled = almostRecalled.includes(index);
+    let isNotRecalled = notRecalled.includes(index);
     return (
         <SCQuestionContainer>
             <SCQuestionHeader $isOpened={isOpened} $isFlipped={isFlipped}>
                 <p>Pergunta {index + 1}</p>
-                <button disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={play}/></button>
+                <button disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={isRecalled ? ok : isAlmostRecalled ? almost : isNotRecalled ? notOk : play}/></button>
             </SCQuestionHeader>
             <SCQuestion $isOpened={isOpened} $isFlipped={isFlipped}>
                 {isOpened ? <p>{question}</p> : isFlipped ? <p>{answer}</p> : ""}

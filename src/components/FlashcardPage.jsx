@@ -36,7 +36,10 @@ export default function FlashcardPage(props) {
                         />
                 )}
             </SCFlashcards>
-            <Footer/>
+            <Footer
+             cards={props.cards}
+             answered={answered}
+             />
         </>
     )
 }
