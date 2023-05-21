@@ -1,27 +1,43 @@
+import { useState } from 'react';
+import styled from "styled-components";
 import Flashcard from "./Flashcard";
 import Footer from "./Footer";
 import Header from "./Header";
 
-export default function FlashcardPage() {
+const [openCards, setOpenCards] = useState([]);
+const [recalled, setRecalled] = useState([]);
+const [almostRecalled, setAlmostRecalled] = useState([]);
+const [notRecalled, setNotRecalled] = useState([]);
+const [answered, setAnswered] = useState([]);
 
-    const cards = [
-        { question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
-        { question: "O React é __", answer: "Uma biblioteca JavaScript para construção de interfaces" },
-        { question: "Componentes devem iniciar com __", answer: "Letra maiúscula" },
-        { question: "Podemos colocar __ dentro do JSX", answer: "expressões" },
-        { question: "O ReactDOM nos ajuda __", answer: "Interagindo com a DOM para colocar componentes React na mesma" },
-        { question: "Usamos o npm para __", answer: "Gerenciar os pacotes necessários e suas dependências" },
-        { question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
-        { question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
-    ]
-
+export default function FlashcardPage(props) {
     return (
         <>
-            <h2>Flashcard Page</h2>
             <Header/>
-            <Flashcard/>
-            <Flashcard/>
+            <SCFlashcards>
+                {props.cards.map((card, indice) => 
+                    <Flashcard
+                        key={indice}
+                        card={card}
+                        indice={indice}
+                        openCards={openCards}
+                        setOpenCards={setOpenCards}
+                        recalled={recalled}
+                        setRecalled={setRecalled}
+                        almostRecalled={almostRecalled}
+                        setAlmostRecalled={setAlmostRecalled}
+                        notRecalled={notRecalled}
+                        setNotRecalled={setNotRecalled}
+                        answered={answered}
+                        setAnswered={setAnswered}
+                        />
+                )}
+            </SCFlashcards>
             <Footer/>
         </>
     )
 }
+
+const SCFlashcards = styled.div`
+    margin-top: 142px;
+`
