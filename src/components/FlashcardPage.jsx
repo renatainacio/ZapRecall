@@ -4,13 +4,14 @@ import Flashcard from "./Flashcard";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const [openCards, setOpenCards] = useState([]);
-const [recalled, setRecalled] = useState([]);
-const [almostRecalled, setAlmostRecalled] = useState([]);
-const [notRecalled, setNotRecalled] = useState([]);
-const [answered, setAnswered] = useState([]);
 
 export default function FlashcardPage(props) {
+    const [openCards, setOpenCards] = useState([]);
+    const [recalled, setRecalled] = useState([]);
+    const [almostRecalled, setAlmostRecalled] = useState([]);
+    const [notRecalled, setNotRecalled] = useState([]);
+    const [answered, setAnswered] = useState([]);
+    const [flipped, setFlipped] = useState([]);
     return (
         <>
             <Header/>
@@ -30,6 +31,8 @@ export default function FlashcardPage(props) {
                         setNotRecalled={setNotRecalled}
                         answered={answered}
                         setAnswered={setAnswered}
+                        flipped={flipped}
+                        setFlipped={setFlipped}
                         />
                 )}
             </SCFlashcards>
@@ -40,4 +43,5 @@ export default function FlashcardPage(props) {
 
 const SCFlashcards = styled.div`
     margin-top: 142px;
+    margin-bottom: 95px;
 `

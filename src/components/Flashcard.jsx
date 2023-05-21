@@ -3,21 +3,23 @@ import flip from '../assets/seta_virar.png';
 import styled from 'styled-components';
 
 export default function Flashcard(props) {
-    const {indice, openCards, setOpenCards, recalled, setRecalled, almostRecalled, setAlmostRecalled,
-    notRecalled, setNotRecalled, answered, setAnswered} = props;
+    const {indice, openCards, setOpenCards, recalled, setRecalled,
+        almostRecalled, setAlmostRecalled, notRecalled, setNotRecalled,
+        answered, setAnswered, flipped, setFlipped} = props;
     const {question, answer} = props.card;
-    const isOpened = openCards.includes(indice);
-    const isAnswered = answered.includes(indice);
+    let isOpened = openCards.includes(indice);
+    let isAnswered = answered.includes(indice);
+    let isFlipped = flipped.includes(indice);
     return (
         <SCQuestionContainer>
-            <SCQuestionHeader isOpened={isOpened}>
+            <SCQuestionHeader $isOpened={isOpened}>
                 <p>Pergunta {indice + 1}</p>
-                <img src={play}/>
+                <img src={play} disabled={!isOpened} onClick={flipCard}/>
             </SCQuestionHeader>
-            <SCQuestion isOpened={isOpened}>
+            <SCQuestion $isOpened={isOpened}>
                 <p>{question}</p>
-                <img src={flip}/>
-                <SCButtons>
+                <img src={flip} disabled={!isOpened}/>
+                <SCButtons $isOpened={isOpened}>
                     <SCButton $color="red">Não lembrei</SCButton>
                     <SCButton $color="yellow">Quase não lembrei</SCButton>
                     <SCButton>Zap!</SCButton>
@@ -25,6 +27,12 @@ export default function Flashcard(props) {
             </SCQuestion>
         </SCQuestionContainer>
     )
+
+    function flipCard() {
+        const aux = [...openCards, indice];
+        console.log(aux);
+        setOpenCards(aux);
+    }
 }
 
 const SCQuestionContainer = styled.div`
@@ -37,7 +45,7 @@ const SCQuestionHeader = styled.div`
     background: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    display: flex;
+    display: ${props => props.$isOpened ? "none" : "flex"};
     justify-content: space-between;
     align-items: center;
     padding: 0px 15px;
@@ -58,6 +66,7 @@ const SCQuestion = styled.div`
     border-radius: 5px;
     padding: 18px 15px;
     position: relative;
+    display: ${props => !props.$isOpened ? "none" : "flex"};
     p {
         font-family: 'Recursive';
         font-style: normal;
@@ -76,7 +85,7 @@ const SCQuestion = styled.div`
 `;
 
 const SCButtons = styled.div`
-    display: flex;
+    display: ${props => !props.$isFlipped ? "none" : "flex"};
     width: 300px;
     position: absolute;
     bottom: 10px;

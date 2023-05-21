@@ -19,6 +19,8 @@ const SCHeader = styled.header`
     justify-content: center;
     align-items: center;
     background-color: #FB6B6B;
+    border: 1px solid rgb(219, 219, 219);
+    border-bottom: none;
     height: 142px;
     width: 100%;
     img {
