@@ -18,7 +18,7 @@ export default function Flashcard(props) {
     let isNotRecalled = notRecalled.includes(index);
     return (
         <SCQuestionContainer>
-            <SCQuestionHeader $isOpened={isOpened} $isFlipped={isFlipped}>
+            <SCQuestionHeader $isOpened={isOpened} $isFlipped={isFlipped} $isRecalled={isRecalled} $isAnswered={isAnswered} $isAlmostRecalled={isAlmostRecalled} $isNotRecalled={isNotRecalled}>
                 <p>Pergunta {index + 1}</p>
                 <button disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={isRecalled ? ok : isAlmostRecalled ? almost : isNotRecalled ? notOk : play}/></button>
             </SCQuestionHeader>
@@ -86,7 +86,8 @@ const SCQuestionHeader = styled.div`
         font-weight: 700;
         font-size: 16px;
         line-height: 19px;
-        color: #333333;
+        color: ${props => (props.$isRecalled ? "#2FBE34" : props.$isAlmostRecalled ? "#FF922E" : props.$isNotRecalled ? "#FF3030" : "#333333")};
+        text-decoration: ${props => (props.$isAnswered ? "line-through" : "none")}
     }
     button {
         border: none;

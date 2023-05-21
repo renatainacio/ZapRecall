@@ -4,7 +4,7 @@ export default function Footer(props) {
     const {answered, cards} = props;
     return(
         <SCFooter>
-            <p>{answered.length}/{cards.length} Concluídos</p>
+            <p>{answered.length}/{cards.length} CONCLUÍDOS</p>
         </SCFooter>
     )
 }
@@ -22,7 +22,6 @@ const SCFooter = styled.div`
     justify-content: center;
     align-items: center;
     p {
-        width: 146px;
         height: 22px;
         font-family: 'Recursive';
         font-style: normal;
