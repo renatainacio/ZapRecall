@@ -16,11 +16,11 @@ export default function FlashcardPage(props) {
         <>
             <Header/>
             <SCFlashcards>
-                {props.cards.map((card, indice) => 
+                {props.cards.map((card, index) => 
                     <Flashcard
-                        key={indice}
+                        key={index}
                         card={card}
-                        indice={indice}
+                        index={index}
                         openCards={openCards}
                         setOpenCards={setOpenCards}
                         recalled={recalled}
