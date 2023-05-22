@@ -16,12 +16,20 @@ export default function Flashcard(props) {
     let isRecalled = recalled.includes(index);
     let isAlmostRecalled = almostRecalled.includes(index);
     let isNotRecalled = notRecalled.includes(index);
+
+    if(!isOpened && !isFlipped)
+    {
+        return (
+            <SCQuestionContainer data-test="flashcard">
+                <SCQuestionHeader $isRecalled={isRecalled} $isAnswered={isAnswered} $isAlmostRecalled={isAlmostRecalled} $isNotRecalled={isNotRecalled}>
+                    <p data-test="flashcard-text">Pergunta {index + 1}</p>
+                    <button data-test={isRecalled ? "zap-icon" : isAlmostRecalled ? "partial-icon" : isNotRecalled ? "no-icon" : "play-btn"} disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={isRecalled ? ok : isAlmostRecalled ? almost : isNotRecalled ? notOk : play}/></button>
+                </SCQuestionHeader>
+                </SCQuestionContainer>
+        )
+    }
     return (
         <SCQuestionContainer data-test="flashcard">
-            <SCQuestionHeader $isOpened={isOpened} $isFlipped={isFlipped} $isRecalled={isRecalled} $isAnswered={isAnswered} $isAlmostRecalled={isAlmostRecalled} $isNotRecalled={isNotRecalled}>
-                <p data-test="flashcard-text">Pergunta {index + 1}</p>
-                <button data-test={isRecalled ? "zap-icon" : isAlmostRecalled ? "partial-icon" : isNotRecalled ? "no-icon" : "play-btn"} disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={isRecalled ? ok : isAlmostRecalled ? almost : isNotRecalled ? notOk : play}/></button>
-            </SCQuestionHeader>
             <SCQuestion $isOpened={isOpened} $isFlipped={isFlipped}>
                 {isOpened ? <p data-test="flashcard-text">{question}</p> : isFlipped ? <p data-test="flashcard-text">{answer}</p> : ""}
                 <img src={flip} onClick={flipCard} data-test="turn-btn"/>
@@ -76,7 +84,7 @@ const SCQuestionHeader = styled.div`
     background: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    display: ${props => (props.$isOpened || props.$isFlipped) ? "none" : "flex"};
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 15px;
@@ -102,7 +110,7 @@ const SCQuestion = styled.div`
     border-radius: 5px;
     padding: 10px 15px;
     position: relative;
-    display: ${props => (!props.$isOpened && !props.$isFlipped) ? "none" : "flex"};
+    display: flex;
     p {
         height: 53px
         padding: 5px 0px;
