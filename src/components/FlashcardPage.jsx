@@ -41,7 +41,6 @@ export default function FlashcardPage(props) {
              answered={answered}
              recalled={recalled}
              almostRecalled={almostRecalled}
-             notRecalled={notRecalled}
              />
         </>
     )
