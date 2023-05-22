@@ -33,7 +33,7 @@ export default function Flashcard(props) {
                     <SCButtons>
                         <SCButton $color="red" onClick={() => answerQuestion("notRecalled")} data-test="no-btn">Não lembrei</SCButton>
                         <SCButton $color="yellow" onClick={() => answerQuestion("almostRecalled")} data-test="partial-btn">Quase não lembrei</SCButton>
-                        <SCButton onClick={() => answerQuestion("recalled")} data-test="zap-btn">Zap!</SCButton>
+                        <SCButton $color="green" onClick={() => answerQuestion("recalled")} data-test="zap-btn">Zap!</SCButton>
                     </SCButtons>
                 : ""}
                 </SCQuestion>
