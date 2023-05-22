@@ -5,7 +5,10 @@ import styled from "styled-components";
 export default function EndOfGame(props) {
     return (
         <SCMessage data-test="finish-text">
-            <h2><img src={props.result === "parabens" ? party : sad} alt="emoji"/>  {props.result === "parabens" ? "Parabéns!" : "Putz..."}</h2>
+            <div>
+            <img src={props.result === "parabens" ? party : sad} alt="emoji"/>
+                <h2>{props.result === "parabens" ? "Parabéns!" : "Putz..."}</h2>
+            </div>
             <p>{props.result === "parabens" ? "Você não esqueceu de nenhum flashcard!" : "Ainda faltam alguns... Mas não desanime!"}</p>
         </SCMessage>
     )
@@ -16,9 +19,11 @@ const SCMessage = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    h2 {
+    div {
         display: flex;
         margin-bottom: 14px;
+    }
+    h2 {
         height: 22px;
         font-family: 'Recursive';
         font-style: normal;
@@ -26,11 +31,11 @@ const SCMessage = styled.div`
         font-size: 18px;
         line-height: 22px;
         color: #333333;
-        img {
-            width: 23px;
-            height: 23px;
-            margin-right: 12px;
-        }
+    }
+    img {
+        width: 23px;
+        height: 23px;
+        margin-right: 12px;
     }
     p {
         width: 222px;
