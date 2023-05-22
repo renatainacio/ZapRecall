@@ -17,33 +17,29 @@ export default function Flashcard(props) {
     let isAlmostRecalled = almostRecalled.includes(index);
     let isNotRecalled = notRecalled.includes(index);
 
-    if(!isOpened && !isFlipped)
-    {
-        return (
-            <SCQuestionContainer data-test="flashcard">
+    return (
+        <SCQuestionContainer data-test="flashcard">
+            {(!isOpened && !isFlipped) ?
                 <SCQuestionHeader $isRecalled={isRecalled} $isAnswered={isAnswered} $isAlmostRecalled={isAlmostRecalled} $isNotRecalled={isNotRecalled}>
                     <p data-test="flashcard-text">Pergunta {index + 1}</p>
                     <button data-test={isRecalled ? "zap-icon" : isAlmostRecalled ? "partial-icon" : isNotRecalled ? "no-icon" : "play-btn"} disabled={(isOpened || isFlipped || isAnswered)} onClick={openCard}><img src={isRecalled ? ok : isAlmostRecalled ? almost : isNotRecalled ? notOk : play}/></button>
                 </SCQuestionHeader>
-                </SCQuestionContainer>
-        )
-    }
-    return (
-        <SCQuestionContainer data-test="flashcard">
-            <SCQuestion $isOpened={isOpened} $isFlipped={isFlipped}>
-                {isOpened ? <p data-test="flashcard-text">{question}</p> : isFlipped ? <p data-test="flashcard-text">{answer}</p> : ""}
-                {isOpened ? <img src={flip} onClick={flipCard} data-test="turn-btn"/> : ""}
-                {isFlipped ?                 
-                <SCButtons>
-                    <SCButton $color="red" onClick={() => answerQuestion("notRecalled")} data-test="no-btn">Não lembrei</SCButton>
-                    <SCButton $color="yellow" onClick={() => answerQuestion("almostRecalled")} data-test="partial-btn">Quase não lembrei</SCButton>
-                    <SCButton onClick={() => answerQuestion("recalled")} data-test="zap-btn">Zap!</SCButton>
-                </SCButtons>
              : ""}
-            </SCQuestion>
+            {(isOpened || isFlipped) ? 
+                <SCQuestion $isOpened={isOpened} $isFlipped={isFlipped}>
+                    {isOpened ? <p data-test="flashcard-text">{question}</p> : isFlipped ? <p data-test="flashcard-text">{answer}</p> : ""}
+                    {isOpened ? <img src={flip} onClick={flipCard} data-test="turn-btn"/> : ""}
+                    {isFlipped ?                 
+                    <SCButtons>
+                        <SCButton $color="red" onClick={() => answerQuestion("notRecalled")} data-test="no-btn">Não lembrei</SCButton>
+                        <SCButton $color="yellow" onClick={() => answerQuestion("almostRecalled")} data-test="partial-btn">Quase não lembrei</SCButton>
+                        <SCButton onClick={() => answerQuestion("recalled")} data-test="zap-btn">Zap!</SCButton>
+                    </SCButtons>
+                : ""}
+                </SCQuestion>
+             : ""}
         </SCQuestionContainer>
     )
-
     
     function answerQuestion(selection) {
         if(selection === "recalled") {
