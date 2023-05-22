@@ -32,12 +32,14 @@ export default function Flashcard(props) {
         <SCQuestionContainer data-test="flashcard">
             <SCQuestion $isOpened={isOpened} $isFlipped={isFlipped}>
                 {isOpened ? <p data-test="flashcard-text">{question}</p> : isFlipped ? <p data-test="flashcard-text">{answer}</p> : ""}
-                <img src={flip} onClick={flipCard} data-test="turn-btn"/>
-                <SCButtons $isFlipped={isFlipped}>
-                    <SCButton $color="red" disabled={!isFlipped} onClick={() => answerQuestion("notRecalled")} data-test="no-btn">Não lembrei</SCButton>
-                    <SCButton $color="yellow" disabled={!isFlipped} onClick={() => answerQuestion("almostRecalled")} data-test="partial-btn">Quase não lembrei</SCButton>
-                    <SCButton disabled={!isFlipped} onClick={() => answerQuestion("recalled")} data-test="zap-btn">Zap!</SCButton>
+                {isOpened ? <img src={flip} onClick={flipCard} data-test="turn-btn"/> : ""}
+                {isFlipped ?                 
+                <SCButtons>
+                    <SCButton $color="red" onClick={() => answerQuestion("notRecalled")} data-test="no-btn">Não lembrei</SCButton>
+                    <SCButton $color="yellow" onClick={() => answerQuestion("almostRecalled")} data-test="partial-btn">Quase não lembrei</SCButton>
+                    <SCButton onClick={() => answerQuestion("recalled")} data-test="zap-btn">Zap!</SCButton>
                 </SCButtons>
+             : ""}
             </SCQuestion>
         </SCQuestionContainer>
     )
@@ -122,7 +124,7 @@ const SCQuestion = styled.div`
         color: #333333;
     }
     img {
-        display: ${props => !props.$isOpened ? "none" : "flex"};
+        display: flex;
         position: absolute;
         right: 15px;
         bottom: 6px;
@@ -132,7 +134,7 @@ const SCQuestion = styled.div`
 `;
 
 const SCButtons = styled.div`
-    display: ${props => !props.$isFlipped ? "none" : "flex"};
+    display: flex;
     width: 300px;
     position: absolute;
     bottom: 10px;
