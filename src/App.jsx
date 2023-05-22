@@ -1,8 +1,20 @@
 import FlashcardPage from './components/FlashcardPage'
+import WelcomePage from './components/WelcomePage';
 import cardsData from './data'
 import styled from 'styled-components'
+import { useState } from 'react';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  if(currentPage === 0)
+  {
+    return (
+      <SCApp>
+        <WelcomePage setCurrentPage={setCurrentPage}/>
+      </SCApp>
+    ) 
+  }
   return (
     <SCApp>
       <FlashcardPage cards={cardsData}/>
