@@ -14,7 +14,8 @@ export default function Footer(props) {
             <p>{answered.length}/{cards.length} CONCLUÍDOS</p>
             <SCAnswerIcons>
                 {answered.map((card, index) => 
-                    <img key={index} src={recalled.includes(card) ? ok : almostRecalled.includes(card) ? almost : notOk}/>
+                    <img key={index} src={recalled.includes(card) ? ok : almostRecalled.includes(card) ? almost : notOk}
+                    data-test={recalled.includes(card) ? "zap-icon" : almostRecalled.includes(card) ? "partial-icon" : "no-icon"}/>
                 )}
             </SCAnswerIcons>
         </SCFooter>

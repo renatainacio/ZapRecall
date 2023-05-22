@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export default function EndOfGame(props) {
     return (
-        <SCMessage>
+        <SCMessage data-test="finish-text">
             <div>
                 <img src={props.result === "parabens" ? party : sad} alt="emoji"/>
                 <h2>{props.result === "parabens" ? "Parabéns!" : "Putz..."}</h2>
