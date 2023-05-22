@@ -39,6 +39,9 @@ export default function FlashcardPage(props) {
             <Footer
              cards={props.cards}
              answered={answered}
+             recalled={recalled}
+             almostRecalled={almostRecalled}
+             notRecalled={notRecalled}
              />
         </>
     )

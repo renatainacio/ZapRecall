@@ -1,13 +1,31 @@
 import styled from "styled-components";
+import ok from "../assets/icone_certo.png";
+import almost from "../assets/icone_quase.png";
+import notOk from "../assets/icone_erro.png";
 
 export default function Footer(props) {
-    const {answered, cards} = props;
+    const {answered, cards, recalled, almostRecalled, notRecalled} = props;
     return(
         <SCFooter data-test="footer">
             <p>{answered.length}/{cards.length} CONCLUÍDOS</p>
+            <SCAnswerIcons>
+                {answered.map((card, index) => 
+                    <img key={index} src={recalled.includes(card) ? ok : almostRecalled.includes(card) ? almost : notOk}/>
+                )}
+            </SCAnswerIcons>
         </SCFooter>
     )
 }
+
+const SCAnswerIcons = styled.div`
+    display: flex;
+    margin-top: 6px;
+    img {
+        margin-right: 5px;
+        width: 23px;
+        height: 23px;
+    }
+`
 
 const SCFooter = styled.div`
     position: fixed;
@@ -22,7 +40,6 @@ const SCFooter = styled.div`
     justify-content: center;
     align-items: center;
     p {
-        height: 22px;
         font-family: 'Recursive';
         font-style: normal;
         font-weight: 400;
